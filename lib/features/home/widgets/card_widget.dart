@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../../../core/utils/constants.dart';
 import '../../../shared/custom_icon.dart';
 import 'additional_detail_widget.dart';
 
-class HomeCardWidget extends StatelessWidget {
+class HomeCardWidget extends StatefulWidget {
   const HomeCardWidget({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<HomeCardWidget> createState() => _HomeCardWidgetState();
+}
+
+class _HomeCardWidgetState extends State<HomeCardWidget> {
+  var box = Hive.box('fav_box');
+
+  bool _isFav = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isFav = box.get('isFav') ?? false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +95,19 @@ class HomeCardWidget extends StatelessWidget {
                 color: Constants.white,
               ),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    _isFav = !_isFav;
+                  });
+                  if (box.isEmpty) {
+                    box.put('isFav', _isFav);
+                  }
+                },
                 splashRadius: 20,
-                icon: const Icon(
-                  Icons.favorite_outline_rounded,
+                icon: Icon(
+                  _isFav
+                      ? Icons.favorite_sharp
+                      : Icons.favorite_outline_rounded,
                   size: 18,
                   color: Constants.mainColor,
                 ),

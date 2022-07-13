@@ -33,7 +33,7 @@ class AdditionalDetailWidget extends StatelessWidget {
           width: 10,
         ),
         const Icon(
-          Icons.currency_lira_sharp,
+          Icons.attach_money_rounded,
           size: 16,
           color: Constants.mainColor,
         ),

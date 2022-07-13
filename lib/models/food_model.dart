@@ -1,14 +1,18 @@
 import 'dart:convert';
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:hive/hive.dart';
 
 part 'food_model.g.dart';
 
-@JsonSerializable()
+@HiveType(typeId: 0)
 class FoodModel {
+  @HiveField(0)
   final String? idCategory;
+  @HiveField(1)
   final String? strCategory;
+  @HiveField(2)
   final String? strCategoryThumb;
+  @HiveField(3)
   final String? strCategoryDescription;
   FoodModel({
     this.idCategory,

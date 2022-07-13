@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:lean_scale_case/features/categories/categories_view.dart';
 import 'package:lean_scale_case/features/checkout/checkout_view.dart';
+import 'package:lean_scale_case/features/restaurants/restaurants_view.dart';
 
 import '../../features/home/home_view.dart';
 import '../../features/master/master_view.dart';
+import '../../features/restaurants/subviews/restaurant_detailed_view.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'View,Route',
@@ -19,9 +22,19 @@ import '../../features/master/master_view.dart';
       ],
     ),
     AutoRoute(
-      page: CheckoutView,
-      name: 'check',
-      path: '/check',
+      page: RestaurantsView,
+      name: 'restaurants',
+      path: '/restaurants',
+    ),
+    AutoRoute(
+      page: RestaurantsDetailedView,
+      name: 'restaurantsDetail',
+      path: '/restaurantsDetail',
+    ),
+    AutoRoute(
+      page: CategoriesView,
+      name: 'categories',
+      path: '/categories',
     ),
   ],
 )

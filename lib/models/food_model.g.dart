@@ -3,19 +3,48 @@
 part of 'food_model.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// TypeAdapterGenerator
 // **************************************************************************
 
-FoodModel _$FoodModelFromJson(Map<String, dynamic> json) => FoodModel(
-      idCategory: json['idCategory'] as String?,
-      strCategory: json['strCategory'] as String?,
-      strCategoryThumb: json['strCategoryThumb'] as String?,
-      strCategoryDescription: json['strCategoryDescription'] as String?,
-    );
+class FoodModelAdapter extends TypeAdapter<FoodModel> {
+  @override
+  final int typeId = 0;
 
-Map<String, dynamic> _$FoodModelToJson(FoodModel instance) => <String, dynamic>{
-      'idCategory': instance.idCategory,
-      'strCategory': instance.strCategory,
-      'strCategoryThumb': instance.strCategoryThumb,
-      'strCategoryDescription': instance.strCategoryDescription,
+  @override
+  FoodModel read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
+    return FoodModel(
+      idCategory: fields[0] as String?,
+      strCategory: fields[1] as String?,
+      strCategoryThumb: fields[2] as String?,
+      strCategoryDescription: fields[3] as String?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, FoodModel obj) {
+    writer
+      ..writeByte(4)
+      ..writeByte(0)
+      ..write(obj.idCategory)
+      ..writeByte(1)
+      ..write(obj.strCategory)
+      ..writeByte(2)
+      ..write(obj.strCategoryThumb)
+      ..writeByte(3)
+      ..write(obj.strCategoryDescription);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FoodModelAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}

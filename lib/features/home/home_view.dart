@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lean_scale_case/core/utils/constants.dart';
 import 'package:lean_scale_case/features/home/widgets/home_titles_widget.dart';
@@ -20,7 +21,9 @@ class HomeView extends StatelessWidget {
           child: Column(
             children: [
               HomeTitlesWidget(
-                onTap: () {},
+                onTap: () {
+                  AutoRouter.of(context).pushNamed('/categories');
+                },
                 numbers: '5',
                 title: 'Categories',
               ),
@@ -47,7 +50,9 @@ class HomeView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 30, bottom: 20),
                 child: HomeTitlesWidget(
-                  onTap: () {},
+                  onTap: () {
+                    AutoRouter.of(context).pushNamed('/restaurants');
+                  },
                   title: 'Popular Restaurants',
                   numbers: '5',
                 ),
