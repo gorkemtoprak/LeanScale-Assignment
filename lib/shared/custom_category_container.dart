@@ -5,10 +5,12 @@ import '../core/utils/constants.dart';
 class CustomCategoryContainer extends StatelessWidget {
   final String? image;
   final String? title;
+  final Gradient? gradient;
   const CustomCategoryContainer({
     Key? key,
     this.image,
     this.title,
+    this.gradient,
   }) : super(key: key);
 
   @override
@@ -20,6 +22,7 @@ class CustomCategoryContainer extends StatelessWidget {
         borderRadius: const BorderRadius.all(
           Radius.circular(16),
         ),
+        gradient: gradient,
         border: Border.all(
           color: Constants.warmGrey,
           width: 2,

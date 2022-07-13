@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:hive/hive.dart';
 
 part 'food_model.g.dart';
@@ -21,26 +19,17 @@ class FoodModel {
     this.strCategoryDescription,
   });
 
-  Map<String, dynamic> toMap() {
-    return {
-      'idCategory': idCategory,
-      'strCategory': strCategory,
-      'strCategoryThumb': strCategoryThumb,
-      'strCategoryDescription': strCategoryDescription,
-    };
-  }
+  factory FoodModel.fromJson(Map<String, dynamic> json) => FoodModel(
+        idCategory: json['idCategory'],
+        strCategory: json['strCategory'],
+        strCategoryThumb: json['strCategoryThumb'],
+        strCategoryDescription: json['strCategoryDescription'],
+      );
 
-  factory FoodModel.fromMap(Map<String, dynamic> map) {
-    return FoodModel(
-      idCategory: map['idCategory'],
-      strCategory: map['strCategory'],
-      strCategoryThumb: map['strCategoryThumb'],
-      strCategoryDescription: map['strCategoryDescription'],
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory FoodModel.fromJson(String source) =>
-      FoodModel.fromMap(json.decode(source));
+  Map<String, dynamic> toJson() => {
+        'idCategory': idCategory,
+        'strCategory': strCategory,
+        'strCategoryThumb': strCategoryThumb,
+        'strCategoryDescription': strCategoryDescription,
+      };
 }
