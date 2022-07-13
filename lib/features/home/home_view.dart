@@ -2,8 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lean_scale_case/core/utils/constants.dart';
 import 'package:lean_scale_case/core/utils/datas.dart';
-import 'package:lean_scale_case/core/utils/gradients.dart';
-import 'package:lean_scale_case/features/categories/categories_view.dart';
 import 'package:lean_scale_case/features/categories/subviews/categories_detailed_view.dart';
 import 'package:lean_scale_case/features/home/home_view_model.dart';
 import 'package:lean_scale_case/features/home/widgets/home_titles_widget.dart';
@@ -59,6 +57,8 @@ class HomeView extends StatelessWidget {
                                             model.foodList[index].strCategory,
                                         image: model
                                             .foodList[index].strCategoryThumb,
+                                        description: model.foodList[index]
+                                            .strCategoryDescription,
                                       ),
                                     ));
                               },

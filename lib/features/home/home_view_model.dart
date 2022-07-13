@@ -12,10 +12,10 @@ class HomeViewModel extends BaseViewModel {
   List<FoodModel> foodList = [];
   List<CategoryModel> categoryList = [];
   void init() {
-    fetchFoodCategories();
+    fetchFoods();
   }
 
-  Future<List<FoodModel>>? fetchFoodCategories() async {
+  Future<List<FoodModel>>? fetchFoods() async {
     if (await checkInternet()) {
       foodList = [];
       final response = await http.get(
@@ -46,7 +46,7 @@ class HomeViewModel extends BaseViewModel {
     if (await checkInternet()) {
       final response = await http.get(
         Uri.parse(
-          'https://www.themealdb.com/api/json/v1/1/filter.php?c={$category}',
+          'https://www.themealdb.com/api/json/v1/1/filter.php?c=$category',
         ),
       );
       var data = jsonDecode(response.body);
