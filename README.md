@@ -56,3 +56,14 @@ So because of all these, I chose Flutter instead of others.
  - https://food-g-app.web.app/shop/best-foods
  - https://jsonplaceholder.typicode.com/
 
+## Screenshots
+
+<p float="left">
+  <img src="screenshot/home.png" width="20% height="50">              
+  <img src="screenshot/cat_detail.png" width="20%" />
+  <img src="screenshot/category_list.png" width="20%" />      
+  <img src="screenshot/restaurants.png" width="20%" />      
+  <img src="screenshot/rest_details.png" width="20%" />                                                   <img src="screenshot/checkout.png" width="20%" />        
+  <img src="screenshot/checkout_confirm.png" width="20%" />                                              
+  <img src="screenshot/profile.png" width="20%" />                  
+</p>

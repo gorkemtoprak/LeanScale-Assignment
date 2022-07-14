@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:lean_scale_case/features/restaurants/restaurants_view_model.dart';
 import 'package:lean_scale_case/models/restaurant_food_model.dart';
@@ -66,6 +67,14 @@ class _QuantityWidgetState extends State<QuantityWidget> {
             });
             var box = await Hive.openBox<RestaurantFoods>('rest_food');
             box.add(widget.foods!);
+            Fluttertoast.showToast(
+              msg: 'Item Added to Cart',
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              backgroundColor: Constants.mainColor,
+              textColor: Constants.white,
+              fontSize: 16.0,
+            );
           },
           icon: const Icon(
             Icons.add_circle_outline_rounded,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lean_scale_case/features/checkout/widgets/restaurant_information_widget.dart';
 import 'package:lean_scale_case/models/restaurant_food_model.dart';
@@ -23,6 +22,7 @@ class CheckoutView extends StatefulWidget {
 class _CheckoutViewState extends State<CheckoutView> {
   List<RestaurantFoods> listFoods = [];
 
+  // Get foods from Hive
   void getFoods() async {
     final box = await Hive.openBox<RestaurantFoods>('rest_food');
     setState(() {
