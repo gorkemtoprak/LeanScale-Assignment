@@ -14,6 +14,7 @@ class MasterView extends StatelessWidget {
         Home(),
         Rest(),
         Checkout(),
+        Profile(),
       ],
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
