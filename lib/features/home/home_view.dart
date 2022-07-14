@@ -59,6 +59,7 @@ class HomeView extends StatelessWidget {
                                             .foodList[index].strCategoryThumb,
                                         description: model.foodList[index]
                                             .strCategoryDescription,
+                                        index: index,
                                       ),
                                     ));
                               },
@@ -80,7 +81,7 @@ class HomeView extends StatelessWidget {
                         AutoRouter.of(context).pushNamed('/restaurants');
                       },
                       title: 'Popular Restaurants',
-                      numbers: '5',
+                      numbers: '3',
                     ),
                   ),
                   //TODO: YOU SHOULD CHANGE THIS LATER..

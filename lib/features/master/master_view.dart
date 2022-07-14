@@ -12,6 +12,7 @@ class MasterView extends StatelessWidget {
     return AutoTabsRouter(
       routes: const [
         Home(),
+        Rest(),
         Checkout(),
       ],
       builder: (context, child, animation) {
@@ -57,6 +58,19 @@ class MasterView extends StatelessWidget {
                     color: Constants.warmGreyTwo,
                   ),
                   label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  activeIcon: Icon(
+                    Icons.food_bank_rounded,
+                    size: 25,
+                    color: Constants.mainColor,
+                  ),
+                  icon: Icon(
+                    Icons.food_bank_rounded,
+                    size: 25,
+                    color: Constants.warmGreyTwo,
+                  ),
+                  label: 'Restaurants',
                 ),
                 BottomNavigationBarItem(
                   activeIcon: Icon(

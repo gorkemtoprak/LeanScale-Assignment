@@ -12,18 +12,21 @@ class RestaurantsView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar('Restaurants'),
       backgroundColor: Constants.white,
-      body: GridView.builder(
-        padding: customPadding(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 25,
-          mainAxisExtent: 310,
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 80),
+        child: GridView.builder(
+          padding: customPadding(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 25,
+            mainAxisExtent: 310,
+          ),
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return const RestaurantsWidget();
+          },
         ),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return const RestaurantsWidget();
-        },
       ),
     );
   }

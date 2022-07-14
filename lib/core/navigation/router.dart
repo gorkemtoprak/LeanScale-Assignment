@@ -18,6 +18,7 @@ import '../../features/restaurants/subviews/restaurant_detailed_view.dart';
       children: [
         RedirectRoute(path: '', redirectTo: 'home'),
         AutoRoute(initial: true, page: HomeView, name: 'home', path: 'home'),
+        AutoRoute(page: RestaurantsView, name: 'rest', path: 'rest'),
         AutoRoute(page: CheckoutView, name: 'checkout', path: 'checkout'),
       ],
     ),

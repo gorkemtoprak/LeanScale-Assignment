@@ -53,7 +53,7 @@ class ProductsListWidget extends StatelessWidget {
               //   height: 10,
               // ),
               QuantityWidget(
-                quantity: productQuantity ?? '',
+                quantity: 0,
                 price: productPrice ?? '',
                 showPrice: true,
               )

@@ -47,6 +47,10 @@ class AppRouter extends _i7.RootStackRouter {
       return _i7.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i5.HomeView());
     },
+    Rest.name: (routeData) {
+      return _i7.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i2.RestaurantsView());
+    },
     Checkout.name: (routeData) {
       return _i7.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.CheckoutView());
@@ -64,6 +68,7 @@ class AppRouter extends _i7.RootStackRouter {
               redirectTo: 'home',
               fullMatch: true),
           _i7.RouteConfig(Home.name, path: 'home', parent: Master.name),
+          _i7.RouteConfig(Rest.name, path: 'rest', parent: Master.name),
           _i7.RouteConfig(Checkout.name, path: 'checkout', parent: Master.name)
         ]),
         _i7.RouteConfig(Restaurants.name, path: '/restaurants'),
@@ -112,6 +117,14 @@ class Home extends _i7.PageRouteInfo<void> {
   const Home() : super(Home.name, path: 'home');
 
   static const String name = 'Home';
+}
+
+/// generated route for
+/// [_i2.RestaurantsView]
+class Rest extends _i7.PageRouteInfo<void> {
+  const Rest() : super(Rest.name, path: 'rest');
+
+  static const String name = 'Rest';
 }
 
 /// generated route for

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:lean_scale_case/core/manager/network_manager.dart';
+import 'package:lean_scale_case/models/restaurant_food_model.dart';
 import 'package:lean_scale_case/models/food_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:stacked/stacked.dart';
@@ -11,6 +12,7 @@ import '../../models/category_model.dart';
 class HomeViewModel extends BaseViewModel {
   List<FoodModel> foodList = [];
   List<CategoryModel> categoryList = [];
+  List<FoodModel> cart = [];
   void init() {
     fetchFoods();
   }
@@ -40,6 +42,11 @@ class HomeViewModel extends BaseViewModel {
     } else {
       throw Exception('ERROR! Failure when load foods...');
     }
+  }
+
+  addProduct(int index) {
+    cart.add(foodList[index]);
+    print(foodList[index].idCategory);
   }
 
   filterCategory(String category) async {

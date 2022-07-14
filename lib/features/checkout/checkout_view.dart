@@ -49,7 +49,7 @@ class CheckoutView extends StatelessWidget {
                 color: Constants.mainColor,
                 iconData: Icons.shopping_cart_checkout_rounded,
                 title: 'Siparişi Tamamla',
-                titleColor: Colors.white,
+                titleColor: Constants.white,
               ),
             ),
           ),

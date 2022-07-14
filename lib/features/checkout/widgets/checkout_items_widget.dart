@@ -38,7 +38,7 @@ class CartItemsWidget extends StatelessWidget {
         ),
         const QuantityWidget(
           price: '',
-          quantity: '1',
+          quantity: 0,
           showPrice: false,
         ),
       ],

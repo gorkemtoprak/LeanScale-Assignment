@@ -13,9 +13,9 @@ Food delivery application assignment. The application has different foods, categ
 | Pros | Cons  |
 | :-----: | :-: | 
 | Beautiful User Interfaces | Unfortunately restaurants were given statically because I couldn't find any public APIs| 
+| Unit Test Done | | 
 
 ## Why am I using Flutter?
 
-## APIs that I used
- - [themealdb] https://themealdb.com/api.php
- - 
+## API that I used
+ - https://themealdb.com/api.php
