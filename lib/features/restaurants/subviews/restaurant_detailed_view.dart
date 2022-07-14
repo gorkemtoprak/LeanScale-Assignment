@@ -30,7 +30,7 @@ class RestaurantsDetailedView extends StatelessWidget {
                       Stack(
                         children: [
                           Image.network(
-                            'https://picsum.photos/200',
+                            'https://cdn.getiryemek.com/restaurants/1598542132458_1125x522.jpeg',
                             fit: BoxFit.cover,
                             height: screenHeight(context) / 3.5,
                             width: screenWidth(context),
@@ -65,7 +65,7 @@ class RestaurantsDetailedView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const AdditionalInformationWidget(
-                              restaurantName: 'Mc Donalds',
+                              restaurantName: 'KFC',
                               restaurantAdress:
                                   '62 O Connell Street Upper, North City, Dublin',
                               restaurantPhoneNumber: '353 1 872 4487',

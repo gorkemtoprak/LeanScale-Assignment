@@ -22,6 +22,8 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
   @override
   void initState() {
     super.initState();
+    // Try getting data that already exists
+    // if there is no data about favorite, assign false to _isFav
     _isFav = box.get('isFav') ?? false;
   }
 
@@ -37,7 +39,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                 Radius.circular(15),
               ),
               child: Image.network(
-                'https://picsum.photos/200/300',
+                'https://cdn.getiryemek.com/restaurants/1598542132458_1125x522.jpeg',
                 height: screenHeight(context) / 5,
                 width: screenWidth(context) / 1.1,
                 fit: BoxFit.fill,
@@ -47,7 +49,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
               height: 10,
             ),
             const Text(
-              'Mc Donalds',
+              'KFC',
               style: TextStyle(
                 color: Constants.blackThree,
                 fontSize: 16,
@@ -101,6 +103,8 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
                   });
                   if (box.isEmpty) {
                     box.put('isFav', _isFav);
+                  } else {
+                    box.delete('isFav');
                   }
                 },
                 splashRadius: 20,

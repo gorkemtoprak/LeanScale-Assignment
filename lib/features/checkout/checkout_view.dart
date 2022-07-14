@@ -45,8 +45,9 @@ class _CheckoutViewState extends State<CheckoutView> {
       body: Column(
         children: [
           const RestaurantsInformationRow(
-            imageUrl: 'https://picsum.photos/200/300',
-            restaurantName: 'Mc Donalds',
+            imageUrl:
+                'https://cdn.getiryemek.com/restaurants/1598542132458_1125x522.jpeg',
+            restaurantName: 'KFC',
             restaurantAddress: '62 O Connell Street Upper, North City, Dublin',
           ),
           ListView.builder(

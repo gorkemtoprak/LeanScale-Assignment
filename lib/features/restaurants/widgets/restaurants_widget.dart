@@ -22,6 +22,8 @@ class _RestaurantsWidgetState extends State<RestaurantsWidget> {
   @override
   void initState() {
     super.initState();
+    // Try getting data that already exists
+    // if there is no data about favorite, assign false to _isFav
     _isFav = box.get('isFav') ?? false;
   }
 
@@ -63,7 +65,7 @@ class _RestaurantsWidgetState extends State<RestaurantsWidget> {
               Stack(
                 children: [
                   Image.network(
-                    'https://picsum.photos/200/300',
+                    'https://cdn.getiryemek.com/restaurants/1598542132458_1125x522.jpeg',
                     fit: BoxFit.fill,
                     height: screenHeight(context) / 5,
                     width: screenWidth(context),
@@ -112,6 +114,8 @@ class _RestaurantsWidgetState extends State<RestaurantsWidget> {
                               _isFav = !_isFav;
                             });
                             if (box.isEmpty) {
+                              box.delete('isFav');
+                            } else {
                               box.put('isFav', _isFav);
                             }
                           },
@@ -136,7 +140,7 @@ class _RestaurantsWidgetState extends State<RestaurantsWidget> {
                 child: Container(
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: const Text(
-                    'Mc Donalds',
+                    'KFC',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
