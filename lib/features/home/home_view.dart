@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:lean_scale_case/core/utils/constants.dart';
 import 'package:lean_scale_case/core/utils/datas.dart';
@@ -74,6 +75,40 @@ class HomeView extends StatelessWidget {
                         },
                       ),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30, bottom: 20),
+                    child: HomeTitlesWidget(
+                      onTap: () {},
+                      numbers: '2',
+                      title: 'LeanScale Deals',
+                      showAll: false,
+                    ),
+                  ),
+                  CarouselSlider.builder(
+                    options: CarouselOptions(
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      viewportFraction: 0.92,
+                      aspectRatio: 3,
+                      initialPage: 0,
+                      // autoPlayInterval: const Duration(seconds: 5),
+                    ),
+                    itemCount: 4,
+                    itemBuilder: (context, index, realIndex) {
+                      return ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        child: Image.network(
+                          'https://lh5.googleusercontent.com/p/AF1QipPU0uFg2YRD0hKtqtebOYrc5KMTmYo9WLfy73sr=w597-h100-k-no',
+                          fit: BoxFit.fill,
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 30, bottom: 20),

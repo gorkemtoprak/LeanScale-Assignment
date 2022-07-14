@@ -6,6 +6,7 @@ import 'package:lean_scale_case/features/checkout/widgets/restaurant_information
 import 'package:lean_scale_case/models/restaurant_food_model.dart';
 import 'package:lean_scale_case/shared/custom_text_form_field.dart';
 
+import 'dart:collection';
 import '../../core/utils/constants.dart';
 import '../../shared/custom_app_bar.dart';
 import '../../shared/custom_elevated_button.dart';
@@ -30,11 +31,24 @@ class _CheckoutViewState extends State<CheckoutView> {
     });
   }
 
+  UnmodifiableListView<RestaurantFoods> get listofFood =>
+      UnmodifiableListView(listFoods);
+
   @override
   void initState() {
     getFoods();
     super.initState();
   }
+
+  // I just want to calculate the total price..
+  int _totalPrice() {
+    int total = 0;
+    listFoods.forEach((RestaurantFoods restaurantFoods) =>
+        {total = restaurantFoods.price!.toInt()});
+    return total;
+  }
+
+  int get totalPrice => _totalPrice();
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +142,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                 width: screenWidth(context),
                 color: Constants.mainColor,
                 iconData: Icons.shopping_cart_checkout_rounded,
-                title: 'Siparişi Tamamla',
+                title: 'Complete Order',
                 titleColor: Constants.white,
               ),
             ),

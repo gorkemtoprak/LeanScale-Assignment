@@ -25,47 +25,6 @@ class QuantityWidget extends StatefulWidget {
 }
 
 class _QuantityWidgetState extends State<QuantityWidget> {
-  // List<Map<String, dynamic>> _items = [];
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   refreshItems();
-  // }
-
-  // void refreshItems() {
-  //   final data = _foodBox.keys.map((key) {
-  //     final value = _foodBox.get(key);
-  //     return {
-  //       'key': key,
-  //       'name': value['name'],
-  //       'price': value['price'],
-  //     };
-  //   }).toList();
-
-  //   setState(() {
-  //     _items = data.reversed.toList();
-  //   });
-  // }
-
-  // Future<void> createItem(Map<String, dynamic> newItem) async {
-  //   await _foodBox.add(newItem);
-  //   refreshItems();
-  // }
-
-  // Map<String, dynamic> readItem(int key) {
-  //   final item = _foodBox.get(key);
-  //   return item;
-  // }
-
-  // Future<void> deleteItem(int itemKey) async {
-  //   await _foodBox.delete(itemKey);
-  //   refreshItems();
-
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //       const SnackBar(content: Text('An item has been deleted')));
-  // }
-
   int counter = 0;
   @override
   Widget build(BuildContext context) {
@@ -107,7 +66,6 @@ class _QuantityWidgetState extends State<QuantityWidget> {
             });
             var box = await Hive.openBox<RestaurantFoods>('rest_food');
             box.add(widget.foods!);
-            // widget.model!.addItems(widget.foods!);
           },
           icon: const Icon(
             Icons.add_circle_outline_rounded,

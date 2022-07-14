@@ -17,6 +17,7 @@ void main() async {
   Directory directory = await path_provider.getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   await Hive.openBox('fav_box');
+  await Hive.openBox('fav_box2');
   Hive.registerAdapter(FoodModelAdapter());
   Hive.registerAdapter(RestaurantFoodsAdapter());
   runApp(

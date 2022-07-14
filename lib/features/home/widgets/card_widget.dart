@@ -15,7 +15,7 @@ class HomeCardWidget extends StatefulWidget {
 }
 
 class _HomeCardWidgetState extends State<HomeCardWidget> {
-  var box = Hive.box('fav_box');
+  var box = Hive.box('fav_box2');
 
   bool _isFav = false;
 

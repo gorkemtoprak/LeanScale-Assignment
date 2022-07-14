@@ -22,7 +22,7 @@ class RestaurantsView extends StatelessWidget {
             mainAxisSpacing: 25,
             mainAxisExtent: 310,
           ),
-          itemCount: 5,
+          itemCount: 3,
           itemBuilder: (context, index) {
             return const RestaurantsWidget();
           },
