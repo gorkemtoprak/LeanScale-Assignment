@@ -19,6 +19,28 @@ Food delivery application assignment. I tried to do as much as I could in 2 days
 
 ## Folder Structure
 
+My folder structure is like this. I try to stick to the MVVM design pattern most of the time in my projects. I create it in a way that I can find things that will work for me in a simple and short time. So, inside the lib folder, I have 4 different folders. 
+ * My first folder is **core** folder. There are 5 different folders in my core folder. Including enums, init, manager, navigation and utils.
+ * Second folder is **features** folder. My features folder is the part where I have every screen in my application and where I create their logic. I folder each screen in this folder according to their names. There is one view file and one view_model file in each screen's folder. Also, for the widgets I use for that screen, I open a new folder in that screen's folder and open a subview folder if there is one. 
+ * Third folder is **models** folder. Here I create all model classes that I use in my project.
+ * Fourth folder is **shared** folder. In this folder, I keep the general/global widgets that I use in my application.
+
+lib                                 
+    -core
+        -enums
+        -init
+        -manager
+        -navigation
+        -utils
+    -features
+        -categories
+        -checkout
+        -home
+        -master
+        -profile
+        -restaurants
+    -model
+    -shared
 
 ## What would I add/change if I had time?
 
