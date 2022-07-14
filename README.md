@@ -18,38 +18,85 @@ Food delivery application assignment. I tried to do as much as I could in 2 days
 | Unit Test Done | Profile screen could have been improved| 
 
 ## Folder Structure
+
 .
-└── lib
-    ├── core
-    │   ├── enums
-    │   ├── init
-    │   ├── manager
-    │   ├── navigation
-    │   └── utils
-    ├── features
-    │   ├── categories
-    │   │   ├── subviews
-    │   │   └── view
-    │   ├── checkout
-    │   │   ├── widgets
-    │   │   └── view
-    │   ├── home
-    │   │   ├── widgets
-    │   │   ├── view
-    │   │   └── view_model
-    │   ├── master
-    │   │   ├── view
-    │   │   └── view_model
-    │   ├── profile
-    │   │   ├── view
-    │   │   └── view_model
-    │   └── restaurants
-    │       ├── subviews
-    │       ├── widgets
-    │       ├── view
-    │       └── view_model
-    ├── models
-    └── shared
+├── core
+│   ├── enums
+│   │   └── theme_enums.dart
+│   ├── init
+│   │   ├── provider
+│   │   │   ├── provider_list.dart
+│   │   │   └── theme_notifier.dart
+│   │   └── theme
+│   │       ├── light
+│   │       │   ├── light_color_schema.dart
+│   │       │   ├── light_text_theme.dart
+│   │       │   └── light_theme_interface.dart
+│   │       ├── app_theme_light.dart
+│   │       └── app_theme.dart
+│   ├── manager
+│   │   ├── hive_manager.dart
+│   │   └── network_manager.dart
+│   ├── navigation
+│   │   ├── router.dart
+│   │   └── router.gr.dart
+│   └── utils
+│       ├── constants.dart
+│       ├── datas.dart
+│       └── gradients.dart
+├── features
+│   ├── categories
+│   │   ├── subviews
+│   │   │   └── categories_detailed_view.dart
+│   │   └── categories_view.dart
+│   ├── checkout
+│   │   ├── widgets
+│   │   │   ├── checkout_items_widget.dart
+│   │   │   └── restaurant_information_widget.dart
+│   │   └── checkout_view.dart
+│   ├── home
+│   │   ├── widgets
+│   │   │   ├── additional_detail_widget.dart
+│   │   │   ├── card_widget.dart
+│   │   │   └── home_titles_widget.dart
+│   │   ├── home_view_model.dart
+│   │   └── home_view.dart
+│   ├── master
+│   │   ├── master_view_model.dart
+│   │   └── master_view.dart
+│   ├── profile
+│   │   ├── profile_view_model.dart
+│   │   └── profile_view.dart
+│   └── restaurants
+│       ├── subviews
+│       │   └── restaurant_detailed_view.dart
+│       ├── widgets
+│       │   ├── additional_information_widget.dart
+│       │   ├── extra_information_widget.dart
+│       │   ├── products_widget.dart
+│       │   └── restaurants_widget.dart
+│       ├── restaurants_view_model.dart
+│       └── restaurants_view.dart
+├── models
+│   ├── category_model.dart
+│   ├── category_model.g.dart
+│   ├── food_model.dart
+│   ├── food_model.g.dart
+│   ├── restaurant_food_model.dart
+│   ├── restaurant_food_model.g.dart
+│   ├── user_model.dart
+│   └── user_model.g.dart
+├── shared
+│   ├── custom_app_bar.dart
+│   ├── custom_category_container.dart
+│   ├── custom_elevated_button.dart
+│   ├── custom_empty_view.dart
+│   ├── custom_headline.dart
+│   ├── custom_icon.dart
+│   ├── custom_quantity_widget.dart
+│   └── custom_text_form_field.dart
+├── generated_plugin_registrant.dart
+└── main.dart
 
 ## What would I add/change if I had time?
 
