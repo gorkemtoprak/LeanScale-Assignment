@@ -10,7 +10,8 @@ class RestaurantsViewModel extends BaseViewModel {
   List<RestaurantFoods> foodList = [];
   List<RestaurantFoods> drinkList = [];
 
-  List<Map<String, dynamic>> cart = [];
+  List<RestaurantFoods> cart = [];
+  List<Map<String, dynamic>> items = [];
 
   void init() {
     Future.delayed(const Duration(seconds: 10));
@@ -19,9 +20,16 @@ class RestaurantsViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  addProduct(int index) {
-    // cart.add(data.products[index]);
-    // print(data.products[index]);
+  Map productQuantity(products) {
+    var quantity = {};
+    products.forEach((product) {
+      if (!quantity.containsKey(product)) {
+        quantity[product] = 1;
+      } else {
+        quantity[product] += 1;
+      }
+    });
+    return quantity;
   }
 
   fetchRestaurantsProducts() async {

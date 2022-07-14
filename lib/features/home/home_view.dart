@@ -34,6 +34,7 @@ class HomeView extends StatelessWidget {
                     },
                     numbers: model.foodList.length.toString(),
                     title: 'Categories',
+                    showAll: true,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20.0),
@@ -82,6 +83,7 @@ class HomeView extends StatelessWidget {
                       },
                       title: 'Popular Restaurants',
                       numbers: '3',
+                      showAll: false,
                     ),
                   ),
                   //TODO: YOU SHOULD CHANGE THIS LATER..
@@ -93,9 +95,15 @@ class HomeView extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       // scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) {
-                        return const Padding(
-                          padding: EdgeInsets.only(right: 10),
-                          child: HomeCardWidget(),
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: GestureDetector(
+                            onTap: () {
+                              AutoRouter.of(context)
+                                  .pushNamed('/restaurantsDetail');
+                            },
+                            child: const HomeCardWidget(),
+                          ),
                         );
                       },
                     ),

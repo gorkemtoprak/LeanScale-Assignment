@@ -1,13 +1,29 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../../../core/utils/constants.dart';
 import 'extra_information_widget.dart';
 
-class RestaurantsWidget extends StatelessWidget {
+class RestaurantsWidget extends StatefulWidget {
   const RestaurantsWidget({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<RestaurantsWidget> createState() => _RestaurantsWidgetState();
+}
+
+class _RestaurantsWidgetState extends State<RestaurantsWidget> {
+  var box = Hive.box('fav_box');
+
+  bool _isFav = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isFav = box.get('isFav') ?? false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +63,10 @@ class RestaurantsWidget extends StatelessWidget {
               Stack(
                 children: [
                   Image.network(
-                    'https://picsum.photos/200',
+                    'https://picsum.photos/200/300',
                     fit: BoxFit.fill,
+                    height: screenHeight(context) / 5,
+                    width: screenWidth(context),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 5),
@@ -89,11 +107,20 @@ class RestaurantsWidget extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _isFav = !_isFav;
+                            });
+                            if (box.isEmpty) {
+                              box.put('isFav', _isFav);
+                            }
+                          },
                           splashRadius: 25,
-                          icon: const Icon(
-                            Icons.favorite_border_rounded,
-                            color: Colors.white,
+                          icon: Icon(
+                            _isFav
+                                ? Icons.favorite_sharp
+                                : Icons.favorite_outline_rounded,
+                            color: Constants.mainColor,
                             size: 20,
                           ),
                         ),
@@ -109,7 +136,7 @@ class RestaurantsWidget extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: const Text(
-                    'Nom Burger',
+                    'Mc Donalds',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,

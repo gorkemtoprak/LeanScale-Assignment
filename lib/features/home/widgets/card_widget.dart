@@ -47,7 +47,7 @@ class _HomeCardWidgetState extends State<HomeCardWidget> {
               height: 10,
             ),
             const Text(
-              'Coni & Co',
+              'Mc Donalds',
               style: TextStyle(
                 color: Constants.blackThree,
                 fontSize: 16,

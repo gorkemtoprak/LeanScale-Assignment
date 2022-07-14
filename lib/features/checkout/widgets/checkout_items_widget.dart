@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants.dart';
-import '../../../shared/custom_quantity_widget.dart';
 
 class CartItemsWidget extends StatelessWidget {
+  final String? title;
+  final String? price;
   const CartItemsWidget({
     Key? key,
+    this.title,
+    this.price,
   }) : super(key: key);
 
   @override
@@ -15,31 +18,26 @@ class CartItemsWidget extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
-              'Karisik Kebap',
+              title ?? '',
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              '₺62,99',
-              style: TextStyle(
+              price ?? '',
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Constants.mainColor,
               ),
             ),
           ],
-        ),
-        const QuantityWidget(
-          price: '',
-          quantity: 0,
-          showPrice: false,
         ),
       ],
     );

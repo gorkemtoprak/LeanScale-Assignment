@@ -92,6 +92,8 @@ class RestaurantsDetailedView extends StatelessWidget {
                                       model.foodList[index].price.toString(),
                                   productQuantity: '0',
                                   productImage: model.foodList[index].img ?? '',
+                                  foods: model.foodList[index],
+                                  model: model,
                                 );
                               },
                             ),
@@ -120,6 +122,7 @@ class RestaurantsDetailedView extends StatelessWidget {
                                       model.foodList[index].price.toString(),
                                   productQuantity: '0',
                                   productImage: model.foodList[index].img ?? '',
+                                  foods: model.foodList[index],
                                 );
                               },
                             ),
@@ -149,6 +152,7 @@ class RestaurantsDetailedView extends StatelessWidget {
                                   productQuantity: '0',
                                   productImage:
                                       model.drinkList[index].img ?? '',
+                                  foods: model.drinkList[index],
                                 );
                               },
                             ),

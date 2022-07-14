@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lean_scale_case/core/utils/constants.dart';
-import 'package:lean_scale_case/features/checkout/checkout_view.dart';
 import 'package:lean_scale_case/features/home/home_view_model.dart';
-import 'package:lean_scale_case/features/restaurants/restaurants_view_model.dart';
 import 'package:lean_scale_case/shared/custom_app_bar.dart';
-import 'package:lean_scale_case/shared/custom_elevated_button.dart';
 import 'package:stacked/stacked.dart';
 
 class CategoriesDetailedView extends StatelessWidget {
@@ -49,24 +46,6 @@ class CategoriesDetailedView extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: CustomElevatedButton(
-                    onTap: () {
-                      model.addProduct(index!);
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //   builder: (context) =>
-                      //       CheckoutView(cart: model.cart[index!]),
-                      // ));
-                    },
-                    height: 50,
-                    width: screenWidth(context) / 4,
-                    color: Constants.mainColor,
-                    iconData: Icons.add,
-                    title: '\$22',
-                    titleColor: Constants.white,
-                  ),
-                )
               ],
             ),
           ),

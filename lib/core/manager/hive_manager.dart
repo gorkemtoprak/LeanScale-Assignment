@@ -1,31 +1,23 @@
 import 'package:hive/hive.dart';
-import 'package:lean_scale_case/models/food_model.dart';
+import 'package:lean_scale_case/models/restaurant_food_model.dart';
 
 class HiveManager {
-  String boxName = 'foods';
+  String boxName = 'food_box';
 
   Future<Box> openBox() async {
-    Box box = await Hive.openBox<FoodModel>(boxName);
+    Box box = await Hive.openBox<RestaurantFoods>(boxName);
     return box;
   }
 
-  addMovie(Box box, FoodModel model) async {
-    await box.put(model.idCategory, model);
+  void addFood(Box box, RestaurantFoods model) async {
+    await box.put(model.id, model);
   }
 
-  List<FoodModel> getMovies(Box box) {
-    return box.values.toList().cast<FoodModel>();
+  List<RestaurantFoods> getFoods(Box box) {
+    return box.values.toList().cast<RestaurantFoods>();
   }
 
-  updateMovie(Box box, FoodModel model) async {
-    await box.put(model.idCategory, model);
-  }
-
-  deleteMovie(Box box, FoodModel model) async {
-    await box.delete(model.idCategory);
-  }
-
-  deleteAllMovies(Box box) async {
-    await box.clear();
+  deleteFoods(Box box, RestaurantFoods model) async {
+    await box.delete(model.id);
   }
 }

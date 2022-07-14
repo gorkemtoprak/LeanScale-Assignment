@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/constants.dart';
+import '../../../models/restaurant_food_model.dart';
 import '../../../shared/custom_quantity_widget.dart';
+import '../restaurants_view_model.dart';
 
 class ProductsListWidget extends StatelessWidget {
   final String? productTitle;
@@ -9,6 +11,8 @@ class ProductsListWidget extends StatelessWidget {
   final String? productQuantity;
   final String? productPrice;
   final String? productImage;
+  final RestaurantsViewModel? model;
+  final RestaurantFoods? foods;
   const ProductsListWidget({
     Key? key,
     this.productTitle,
@@ -16,6 +20,8 @@ class ProductsListWidget extends StatelessWidget {
     this.productQuantity,
     this.productPrice,
     this.productImage,
+    this.model,
+    this.foods,
   }) : super(key: key);
 
   @override
@@ -56,6 +62,8 @@ class ProductsListWidget extends StatelessWidget {
                 quantity: 0,
                 price: productPrice ?? '',
                 showPrice: true,
+                model: model,
+                foods: foods,
               )
             ],
           ),
