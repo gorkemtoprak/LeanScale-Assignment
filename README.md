@@ -25,23 +25,6 @@ My folder structure is like this. I try to stick to the MVVM design pattern most
  * Third folder is **models** folder. Here I create all model classes that I use in my project.
  * Fourth folder is **shared** folder. In this folder, I keep the general/global widgets that I use in my application.
 
-lib                                 
-    -core
-        -enums
-        -init
-        -manager
-        -navigation
-        -utils
-    -features
-        -categories
-        -checkout
-        -home
-        -master
-        -profile
-        -restaurants
-    -model
-    -shared
-
 ## What would I add/change if I had time?
 
 First of all, I would try to find an API where I could get what I wanted more easily instead of the APIs I used. I would definitely set up a service-backend connection and spend more time on the checkout screen. I might add google maps so users could find restaurants more easily on the map and also create a network manager that can be used more effectively. Lastly, I would make it fully functional and deliver it that way.
