@@ -18,27 +18,39 @@ Food delivery application assignment. I tried to do as much as I could in 2 days
 | Unit Test Done | Profile screen could have been improved| 
 
 ## Folder Structure
-
 .
-├── lib
-│    ├── core
-│        ├── enums
-│            ├── theme_enums.dart  
-│        ├── init
-│            ├── provider
-│                ├── provider_list.dart
-│                ├── theme_notifier.dart
-│            ├── theme    
-│                ├── light
-│                ├── app_theme_light.dart               
-│        ├── navigation
-│            ├── router.dart
-│        ├── utils        
-│    ├── features
-│    ├── models      
-│    ├── shared
-│    main.dart  
-└── ...
+└── lib
+    ├── core
+    │   ├── enums
+    │   ├── init
+    │   ├── manager
+    │   ├── navigation
+    │   └── utils
+    ├── features
+    │   ├── categories
+    │   │   ├── subviews
+    │   │   └── view
+    │   ├── checkout
+    │   │   ├── widgets
+    │   │   └── view
+    │   ├── home
+    │   │   ├── widgets
+    │   │   ├── view
+    │   │   └── view_model
+    │   ├── master
+    │   │   ├── view
+    │   │   └── view_model
+    │   ├── profile
+    │   │   ├── view
+    │   │   └── view_model
+    │   └── restaurants
+    │       ├── subviews
+    │       ├── widgets
+    │       ├── view
+    │       └── view_model
+    ├── models
+    └── shared
+
 ## What would I add/change if I had time?
 
 First of all, I would try to find an API where I could get what I wanted more easily instead of the APIs I used. I would definitely set up a service-backend connection and spend more time on the checkout screen. I might add google maps so users could find restaurants more easily on the map and also create a network manager that can be used more effectively. Lastly, I would make it fully functional and deliver it that way.
