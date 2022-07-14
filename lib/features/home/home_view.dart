@@ -121,7 +121,6 @@ class HomeView extends StatelessWidget {
                       showAll: false,
                     ),
                   ),
-                  //TODO: YOU SHOULD CHANGE THIS LATER..
                   SizedBox(
                     height: screenHeight(context),
                     child: ListView.builder(
