@@ -8,6 +8,7 @@ class CustomEmptyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Constants.white,
       body: Center(
         child: Lottie.network(
           'https://assets10.lottiefiles.com/packages/lf20_poqmycwy.json',

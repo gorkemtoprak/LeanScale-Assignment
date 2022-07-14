@@ -8,7 +8,6 @@ import '../../core/manager/network_manager.dart';
 
 class RestaurantsViewModel extends BaseViewModel {
   List<RestaurantFoods> foodList = [];
-  List<RestaurantFoods> drinkList = [];
 
   List<RestaurantFoods> cart = [];
   List<Map<String, dynamic>> items = [];
@@ -16,7 +15,6 @@ class RestaurantsViewModel extends BaseViewModel {
   void init() {
     Future.delayed(const Duration(seconds: 10));
     fetchRestaurantsProducts();
-    fetchRestaurantsDrinks();
     notifyListeners();
   }
 
@@ -51,34 +49,6 @@ class RestaurantsViewModel extends BaseViewModel {
           notifyListeners();
         }
         return foodList;
-      } else {
-        throw Exception('ERROR! Failure when load foods...');
-      }
-    } else {
-      throw Exception('ERROR! Failure when load foods...');
-    }
-  }
-
-  fetchRestaurantsDrinks() async {
-    if (await checkInternet()) {
-      Future.delayed(const Duration(seconds: 10));
-      drinkList = [];
-      final response = await http.get(
-        Uri.parse(
-          'https://ig-food-menus.herokuapp.com/drinks',
-        ),
-      );
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        if (data.isNotEmpty) {
-          for (var newData in data) {
-            Map<String, dynamic> map = newData;
-            drinkList.add(RestaurantFoods.fromJson(map));
-          }
-          drinkList;
-          notifyListeners();
-        }
-        return drinkList;
       } else {
         throw Exception('ERROR! Failure when load foods...');
       }

@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:lean_scale_case/features/checkout/widgets/restaurant_information_widget.dart';
 import 'package:lean_scale_case/models/restaurant_food_model.dart';
+import 'package:lean_scale_case/shared/custom_text_form_field.dart';
 
 import '../../core/utils/constants.dart';
 import '../../shared/custom_app_bar.dart';
@@ -37,6 +38,7 @@ class _CheckoutViewState extends State<CheckoutView> {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController textEditingController = TextEditingController();
     return Scaffold(
       appBar: customAppBar('Checkout'),
       backgroundColor: Constants.white,
@@ -85,9 +87,21 @@ class _CheckoutViewState extends State<CheckoutView> {
               );
             },
           ),
-          const Spacer(
-            flex: 2,
+          Padding(
+            padding: customPadding(),
+            child: CustomTextFormField(
+              onSaved: (text) {
+                // Users' notes about their orders will be recorded here.
+                textEditingController.text = text;
+              },
+              hint: 'Please add notes here...',
+              textCapitalization: TextCapitalization.none,
+              formatter: false,
+              inputFormatters: const [],
+              obscureText: false,
+            ),
           ),
+          const Spacer(),
           Padding(
             padding: customPadding(),
             child: Align(
@@ -99,6 +113,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                   setState(() {
                     listFoods.clear();
                   });
+                  textEditingController.clear();
                   Fluttertoast.showToast(
                     msg: 'Order Completed Succesfully',
                     toastLength: Toast.LENGTH_SHORT,

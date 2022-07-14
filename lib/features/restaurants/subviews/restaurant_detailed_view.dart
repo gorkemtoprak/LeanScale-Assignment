@@ -18,9 +18,10 @@ class RestaurantsDetailedView extends StatelessWidget {
       viewModelBuilder: () => RestaurantsViewModel(),
       onModelReady: (model) => model.init(),
       builder: (context, model, _) {
-        return model.foodList.isEmpty && model.drinkList.isEmpty
+        return model.foodList.isEmpty
             ? const CustomEmptyView()
             : Scaffold(
+                backgroundColor: Constants.white,
                 body: SingleChildScrollView(
                   physics: const ClampingScrollPhysics(),
                   child: Column(
@@ -40,7 +41,7 @@ class RestaurantsDetailedView extends StatelessWidget {
                               height: 40,
                               width: 40,
                               decoration: const BoxDecoration(
-                                color: Colors.white,
+                                color: Constants.white,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10.0)),
                               ),
@@ -123,36 +124,6 @@ class RestaurantsDetailedView extends StatelessWidget {
                                   productQuantity: '0',
                                   productImage: model.foodList[index].img ?? '',
                                   foods: model.foodList[index],
-                                );
-                              },
-                            ),
-                            const Divider(
-                              thickness: 2,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const HeadlineWidget(
-                              title: 'Drinks',
-                            ),
-                            ListView.builder(
-                              itemCount: 3,
-                              shrinkWrap: true,
-                              padding:
-                                  const EdgeInsets.only(top: 20, bottom: 20),
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemBuilder: (BuildContext context, int index) {
-                                return ProductsListWidget(
-                                  productTitle:
-                                      model.drinkList[index].name ?? '',
-                                  productDetails:
-                                      model.drinkList[index].dsc ?? '',
-                                  productPrice:
-                                      model.drinkList[index].price.toString(),
-                                  productQuantity: '0',
-                                  productImage:
-                                      model.drinkList[index].img ?? '',
-                                  foods: model.drinkList[index],
                                 );
                               },
                             ),
